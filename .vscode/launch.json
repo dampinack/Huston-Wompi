@@ -1,0 +1,74 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Pasarela Wompi (F5 - Deno Inspector)",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "/usr/bin/deno",
+      "runtimeArgs": [
+        "run",
+        "--inspect-wait=127.0.0.1:9229",
+        "--allow-net",
+        "--allow-read",
+        "--allow-write",
+        "--allow-env",
+        "${workspaceFolder}/src/server.ts"
+      ],
+      "attachSimplePort": 9229,
+      "preLaunchTask": "Detener instancia previa del servidor",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Ejecutar con Watch / Hot-Reload (Deno)",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "/usr/bin/deno",
+      "runtimeArgs": [
+        "run",
+        "--watch",
+        "--inspect=127.0.0.1:9229",
+        "--allow-net",
+        "--allow-read",
+        "--allow-write",
+        "--allow-env",
+        "${workspaceFolder}/src/server.ts"
+      ],
+      "attachSimplePort": 9229,
+      "preLaunchTask": "Detener instancia previa del servidor",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Debug Pasarela Wompi (Node.js 22+)",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "--experimental-strip-types",
+        "${workspaceFolder}/src/server.ts"
+      ],
+      "preLaunchTask": "Detener instancia previa del servidor",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Abrir Consola Visual (Chrome localhost:3000)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full Stack: Servidor + Navegador (F5)",
+      "configurations": [
+        "Debug Pasarela Wompi (F5 - Deno Inspector)",
+        "Abrir Consola Visual (Chrome localhost:3000)"
+      ]
+    }
+  ]
+}

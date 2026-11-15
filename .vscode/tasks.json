@@ -1,0 +1,51 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Detener instancia previa del servidor",
+      "type": "shell",
+      "command": "pkill -f 'Wompi-Gateway/src/server.ts' 2>/dev/null || pkill -f 'deno.*src/server.ts' 2>/dev/null || true",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared",
+        "clear": false
+      }
+    },
+    {
+      "label": "Iniciar Pasarela (start.sh)",
+      "type": "shell",
+      "command": "bash ${workspaceFolder}/start.sh --restart",
+      "isBackground": true,
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Iniciar en Modo Desarrollo (--dev)",
+      "type": "shell",
+      "command": "bash ${workspaceFolder}/start.sh --dev",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Verificar Tipos TypeScript (deno check)",
+      "type": "shell",
+      "command": "/usr/bin/deno check ${workspaceFolder}/src/server.ts",
+      "problemMatcher": ["$tsc"],
+      "group": "test"
+    },
+    {
+      "label": "Probar Healthcheck y Conexion Wompi API",
+      "type": "shell",
+      "command": "curl -s http://127.0.0.1:3000/api/health && echo '' && curl -s http://127.0.0.1:3000/api/wompi/acceptance-token",
+      "problemMatcher": []
+    }
+  ]
+}

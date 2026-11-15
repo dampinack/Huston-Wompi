@@ -1,0 +1,12 @@
+{
+  "nodeModulesDir": "none",
+  "tasks": {
+    "dev": "deno run --watch --allow-net --allow-read --allow-write --allow-env src/server.ts",
+    "start": "deno run --allow-net --allow-read --allow-write --allow-env src/server.ts",
+    "check": "deno check src/server.ts",
+    "test": "deno test --allow-read --allow-write --allow-env src/tests/"
+  },
+  "compilerOptions": {
+    "strict": true
+  }
+}

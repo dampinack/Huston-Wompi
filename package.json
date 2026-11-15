@@ -1,0 +1,14 @@
+{
+  "name": "wompi-panama-gateway",
+  "version": "1.0.0",
+  "description": "Microservicio de Pasarela de Pagos, Webhooks y API Directa para Wompi Panama (Huston Assets S.A.)",
+  "type": "module",
+  "scripts": {
+    "start:node": "node --experimental-strip-types src/server.ts",
+    "start:deno": "deno run --allow-net --allow-read --allow-write --allow-env src/server.ts",
+    "test:deno": "deno test --allow-read --allow-write --allow-env src/tests/"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
