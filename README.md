@@ -8,6 +8,25 @@ Microservicio completo en **TypeScript (Node.js 22+ / Deno 2)** con persistencia
 
 ---
 
+## Vista Previa de las Pantallas
+
+### Centro de Control Principal (`/`) — Diseño Sky & Ice Fintech
+![Centro de Control Principal Wompi Panamá](Docs/screenshots/01_panel_principal_fintech.png)
+
+### Comprobante Digital de Transacción (`/checkout/result`)
+![Comprobante de Transacción](Docs/screenshots/02_comprobante_transaccion.png)
+
+---
+
+## Documentación Completa en `Docs/`
+
+* [01_Informe_Tecnico_Pasarela_Wompi_PA.md](Docs/01_Informe_Tecnico_Pasarela_Wompi_PA.md) — Diagnóstico de la cuenta **HUSTON ASSETS S.A.**, arquitectura y fórmulas criptográficas `SHA-256`.
+* [02_Bitacora_Chat_Tips_y_Checklist_Lunes.md](Docs/02_Bitacora_Chat_Tips_y_Checklist_Lunes.md) — Bitácora técnica de configuración, tips de debugging (`F5`) y cuestionario para el cliente.
+* [03_Guia_Instalacion_y_Desarrollo_Otra_Maquina.md](Docs/03_Guia_Instalacion_y_Desarrollo_Otra_Maquina.md) — Instrucciones paso a paso para clonar e implementar el entorno de desarrollo en otra computadora.
+* [04_Guia_Git_y_GitHub_Paso_a_Paso.md](Docs/04_Guia_Git_y_GitHub_Paso_a_Paso.md) — Guía completa para subir proyectos a GitHub desde cero y flujo diario para cada nuevo cambio.
+
+---
+
 ## 1. Configuración Rápida
 
 1. Copia el archivo de ejemplo `.env.example` a `.env`:
